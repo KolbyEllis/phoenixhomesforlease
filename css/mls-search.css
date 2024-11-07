@@ -1,0 +1,207 @@
+/*-- -------------------------- -->
+<---         CS-Content         -->
+<--- -------------------------- -*/
+
+/* you can place this CSS group in your global stylesheet that is loaded on every page of the site so all you need to do is copy and paste the HTML into any section and it will all work. Or piece it inside the media queries in whatever section you want to add it to. You can also remove the cs-topper, cs-title, and cs-text and if they aren't already in your global stylesheet you can paste them outside these media queries so all cs-topper, cs-title, and cs-text on your site will pull from 1 place. */
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+    #cs-content-1656 {
+      text-align: center; /* Center text horizontally */
+      width: 100%;
+      max-width: 80rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally */
+      margin: auto; /* Center the entire section */
+      padding-top: 10rem;
+    }
+    #cs-content-1656 .cs-title {
+      max-width: 20ch;
+    }
+    #cs-content-1656 .cs-text {
+      max-width: 40rem;
+      position: relative;
+      z-index: 1;
+    }
+    #cs-content-1656 .cs-text:after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      margin-top: 1.5rem;
+      background: var(--primary);
+      opacity: 1;
+      display: block;
+      position: relative;
+    }
+  }
+
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #cs-content-1656 {
+      flex-direction: row;
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+    }
+    #cs-content-1656 .cs-flex {
+      text-align: center;
+      width: 40vw;
+      max-width: 40rem;
+      flex: none;
+    }
+    #cs-content-1656 .cs-title {
+      margin: 0 auto; /* Center the title */
+    }
+    #cs-content-1656 .cs-text {
+      padding: 0.75rem 0 0.75rem 1.5rem;
+    }
+    #cs-content-1656 .cs-text:after {
+      width: 1px;
+      height: 100%;
+      margin: 0 1.5rem 0 0;
+      order: -1;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  /*-- -------------------------- -->
+<---          Footer            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #footer-1154 {
+        padding: var(--sectionPadding);
+        position: relative;
+        z-index: 1;
+    }
+    #footer-1154 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #footer-1154 .cs-top {
+        width: 100%;
+        /* 32px - 40px */
+        margin-bottom: clamp(2rem, 4vw, 2.5rem);
+        padding-bottom: clamp(2rem, 4vw, 2.5rem);
+        border-bottom: 1px solid #e8e8e8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+    #footer-1154 .cs-ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        row-gap: 0.5rem;
+        /* 28px - 40px */
+        column-gap: clamp(1.75rem, 4vw, 2.5rem);
+    }
+    #footer-1154 .cs-li {
+        list-style: none;
+    }
+    #footer-1154 .cs-link {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        text-decoration: none;
+        margin: 0;
+        color: var(--bodyTextColor);
+        display: block;
+        transition: color 0.3s;
+    }
+    #footer-1154 .cs-link:hover {
+        color: var(--primary);
+    }
+    #footer-1154 .cs-logo {
+        width: 10.5rem;
+        height: auto;
+        display: block;
+    }
+    #footer-1154 .cs-logo-img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    #footer-1154 .cs-bottom {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    #footer-1154 .cs-social {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    #footer-1154 .cs-social-li {
+        list-style: none;
+    }
+    #footer-1154 .cs-social-link {
+        width: 2rem;
+        height: 2rem;
+        background-color: #e8e8e8;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s;
+    }
+    #footer-1154 .cs-social-link:hover {
+        background-color: var(--primary);
+    }
+    #footer-1154 .cs-social-link:hover .cs-social-icon {
+        filter: grayscale(1) brightness(1000%);
+        opacity: 1;
+    }
+    #footer-1154 .cs-social-icon {
+        width: 0.75rem;
+        height: auto;
+        display: block;
+        opacity: 0.6;
+        transition: opacity 0.3s;
+    }
+    #footer-1154 .cs-copyright {
+        font-size: 1rem;
+        line-height: 1.5em;
+        margin: 0;
+        color: var(--bodyTextColor);
+        display: block;
+    }
+    #footer-1154 .cs-copyright-link {
+        font-size: inherit;
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s;
+    }
+    #footer-1154 .cs-copyright-link:hover {
+        color: var(--primary);
+    }
+  }
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #footer-1154 .cs-top {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #footer-1154 .cs-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+  }
+                                
