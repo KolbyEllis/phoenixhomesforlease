@@ -459,6 +459,9 @@ html {
         justify-content: center;
         align-items: center;
         z-index: 100;
+        text-decoration: none;
+        color: white;
+        
     }
     #cs-navigation .cs-logo img {
         width: 100%;
