@@ -15,6 +15,36 @@
 
     const blockedNormalized = blockedPhrases.map(normalizeText);
 
+    function showFormFeedback() {
+        const url = new URL(window.location.href);
+        const submitted = url.searchParams.get("submitted") === "1";
+        if (!submitted) {
+            return;
+        }
+
+        const targetForm = document.querySelector("form[name='Contact Form'], form[name='Rental Form']");
+        if (!targetForm) {
+            return;
+        }
+
+        const message = document.createElement("p");
+        message.setAttribute("role", "status");
+        message.textContent = "Thank you. Your form was submitted successfully.";
+        message.style.backgroundColor = "#e9f8ef";
+        message.style.color = "#14532d";
+        message.style.border = "1px solid #86efac";
+        message.style.padding = "0.75rem 1rem";
+        message.style.borderRadius = "0.5rem";
+        message.style.marginBottom = "1rem";
+
+        targetForm.parentNode.insertBefore(message, targetForm);
+
+        url.searchParams.delete("submitted");
+        const cleanedQuery = url.searchParams.toString();
+        const cleanedUrl = `${url.pathname}${cleanedQuery ? `?${cleanedQuery}` : ""}${url.hash}`;
+        window.history.replaceState({}, "", cleanedUrl);
+    }
+
     function shouldBlockSubmission(form) {
         const submittedText = normalizeText(
             Array.from(form.elements)
@@ -37,6 +67,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+        showFormFeedback();
         const forms = document.querySelectorAll("form[name='Contact Form'], form[name='Rental Form']");
         forms.forEach(attachSpamFilter);
     });
