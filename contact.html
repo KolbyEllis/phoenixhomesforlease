@@ -115,7 +115,8 @@
                             
                         </p>
                     </div>
-                    <form id="cs-form-265" name="Contact Form" method="post" netlify>
+                    <form id="cs-form-265" name="Contact Form" method="post" action="/.netlify/functions/form-submit" netlify>
+                        <input type="hidden" name="form-name" value="Contact Form">
                         <label>
                             First Name
                             <input required type="text" id="name-265" name="fname" placeholder="First Name">
@@ -203,5 +204,6 @@
                                 
 
     <script defer src="/assets/js/nav.js"></script>
+    <script defer src="/assets/js/form-spam-filter.js"></script>
 </body>
 </html>

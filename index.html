@@ -319,7 +319,8 @@
                 WE ANSWER OUR RENTAL INQUIRIES and follow up with you to insure your search for a home for rent is a successful one!!</p>
         </div>
         <!--Form-->
-        <form class="cs-form" id="cs-form-2061" name="Rental Form" method="post" netlify>
+        <form class="cs-form" id="cs-form-2061" name="Rental Form" method="post" action="/.netlify/functions/form-submit" netlify>
+            <input type="hidden" name="form-name" value="Rental Form">
             <label class="cs-label cs-split">
                 First Name *
                 <input class="cs-input" required type="text" id="first-name-2061" name="First Name">
@@ -398,6 +399,7 @@
                                 
 
     <script defer src="/assets/js/nav.js"></script>
+    <script defer src="/assets/js/form-spam-filter.js"></script>
 
     <!--Gallery JS-->
     <script>
